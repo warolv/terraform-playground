@@ -1,3 +1,4 @@
+![alb-architecture](images/alb_pic.png)
 
 # Objective
 
