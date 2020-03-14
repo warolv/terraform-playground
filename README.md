@@ -13,7 +13,7 @@ Deploy a simple 'Hello World!' app on AWS with terraform and using Application L
 
 4. The website should utilize an EC2 application load balancer (ALB) to distribute traffic between the EC2 instances
 
-5. The deployment using terraform/
+5. The deployment using terraform
 
 
 ## Prerequisites
@@ -24,11 +24,10 @@ Deploy a simple 'Hello World!' app on AWS with terraform and using Application L
 
 *  "access_key" / "secret_key" for AWS provider, for this you need go to Services/IAM:
   
-  1. Create User with 'AmazonEC2FullAccess' permissions.
+        Create User with 'AmazonEC2FullAccess' permissions.
   
-  2. Be able to create the roles for ASG and ALB, you need permissions for you IAM user: 
-    * AWSServiceRoleForAutoScaling 
-    * AWSServiceRoleForElasticLoadBalancing
+		Be able to create the roles for ASG and ALB, you need permissions for you IAM user: AWSServiceRoleForAutoScaling / AWSServiceRoleForElasticLoadBalancing
+
 
 ![roles](images/1.png)
 
@@ -58,8 +57,22 @@ Used busybox to simplify things, of course you can create with packer your AMI w
 
 ## Bugs in terraform during development 
 
-If your network is for public ips and isntance you creting using autoscaling via 'aws_launch_configuration', 'associate_public_ip_address = false' not working and instances still assigned public ips.
+If subnet1/subnet2 from Prerequisites is for public ips - instances by default created with public ip and you using in 'aws_launch_configuration' -> 'associate_public_ip_address = false', it's not working and instances still assigned public ips.
 It's terraform problem, only way to fix create network without default public ips.
+
+## Screenshots
+
+![hello-world](images/8.png)
+
+![alb](images/2.png)
+
+![alb_rules](images/4.png)
+
+![target-group](images/5.png)
+
+![asg](images/6.png)
+
+![ec2](images/7.png)
 
 
 
