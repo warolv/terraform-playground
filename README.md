@@ -56,6 +56,10 @@ Used busybox to simplify things, of course you can create with packer your AMI w
 
 * Automate all process even more by adding new VPC + new subnetworks, problem here that I need public facing VPC + public subnetworks and for this I also need to add 'aws_nat_gateway' / 'aws_route_table' ..., I wanted to simplify all things instead.
 
+* Spread instances across different availability zones
+
+* Health check is primitive for demo purposes, but in real app you want something like '/health' path which will insure your app working properly and will do a set of different checks before.
+
 ## Bugs in terraform during development 
 
 If subnet1/subnet2 from Prerequisites is for public ips - instances by default created with public ip and you using in 'aws_launch_configuration' -> 'associate_public_ip_address = false', it's not working and instances still assigned public ips.
