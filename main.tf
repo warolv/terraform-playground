@@ -26,6 +26,7 @@ resource "aws_launch_configuration" "my_launch_configuration" {
   image_id        = "ami-04f1b249d63931121"
   instance_type   = "t3.nano"
   security_groups = [aws_security_group.instance.id]
+  associate_public_ip_address = false
 
   user_data = <<-EOF
               #!/bin/bash
