@@ -1,0 +1,6 @@
+aws_access_key = "XXXX"
+aws_secret_key = "XXXX"
+public_deploy_key = "/Users/username/.ssh/ec2_deploy_key.pub"
+server_port = "8080"
+alb_port = "80"
+ssh_port = "22"
